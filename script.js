@@ -13,6 +13,7 @@ qR.onload = function () {
     posts.map((ele) => {
 
 
+
       main.innerHTML += `
         <div class="contDiv">
           <li>
@@ -22,8 +23,15 @@ qR.onload = function () {
           </li>
       
           <div class="divSpans">
-            ${ele.tags.map(tag => `<span class="tagspan">${tag}</span>`).join('')}
+            ${ele.tags.map(tag => `<span class="tagspan">#${tag}</span>`).join('')}
           </div>
+
+          <div class="interaction">
+          <span class="view"><i class="fa-solid fa-eye"></i> ${ele.views}</span>
+          <span class="like"><i class="fa-solid fa-heart"></i> ${ele.reactions.likes}</span>
+          <span class="dislike"><i class="fa-solid fa-thumbs-down"></i> ${ele.reactions.dislikes}</span>
+          </div>
+
         </div>
       `;
 
@@ -35,8 +43,6 @@ qR.onload = function () {
 
 function copyText(text) {
         navigator.clipboard.writeText(text)
-          .then(() => alert("تم نسخ النص!"))
-          .catch(err => console.error("فشل في النسخ: ", err));
       }
 
 
@@ -70,7 +76,7 @@ function gets() {
 
         get.map(function (ele) {
           divGets.innerHTML += `
-                    <a class="tags"><span  onclick="showGets('${ele.slug}')"> ${ele.name} </span></a>
+                    <a class="tags"><span  onclick="showGets('${ele.slug}')" class="tagsT"> #${ele.name} </span></a>
                   `;
         });
 

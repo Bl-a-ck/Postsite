@@ -1,3 +1,5 @@
+/* cursor:pointer; تغير شكل الموس*/
+
 *{
     border: none;
     outline: none;
@@ -14,22 +16,31 @@ body{
 
     max-width: 100svw;
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 100px 1fr;
+    grid-template-areas: 
+    "h h"
+    "a m";
+    background-image: linear-gradient(to bottom right,black 0% 30%,darkred 45% 70%);
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    padding: 0% 5%;
 }
 header{
+    grid-area: h;
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
 flex-wrap: wrap;
-background-color: rgba(128, 128, 128, 0.464);
+/* background-color: rgba(209, 208, 208, 0.252); */
 gap: 10px;
 padding: 10px;
 }
 
 .searchInput{
-    width: 50%;
+    width: 50.3%;
     border: 2px solid black;
     background-color: whitesmoke;
     border-radius: 15px;
@@ -104,65 +115,78 @@ opacity: 1;
 .aTags{
     display: flex;
     flex-wrap: wrap;
+    justify-content: start;
+    /* display: grid;
+    grid-template-columns: 1fr 1fr; */
     gap: 10px;
     
 }
 
 .tags:hover{
-    background-color: crimson;
-    border: 1px solid crimson;
+    background-color: rgba(197, 117, 25, 0.555);
+    border: 1px solid rgba(197, 117, 25, 0.555);
 }
 
 .tags{
+    text-align: center;
     color: aliceblue;
-    background-color: rgba(153, 50, 204, 0.706);
+    background-color: rgba(191, 96, 239, 0.31);
     padding: 5px 10px;
-    border: 1px solid rgba(153, 50, 204, 0.706);
+    border: 1px solid rgba(191, 96, 239, 0.31);
     border-radius: 10px;
+    cursor:pointer;
+      font-family: "DynaPuff", system-ui;
 }
 
 /* =========================================================== */
+aside{
+    grid-area: a;
+    margin-bottom: 5%;
+}
 
 main{
-    background-color: rgba(7, 7, 7, 0.929);
+    grid-area: m;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
     padding: 20px;
+    margin-bottom: 5%;
 }
 
 .contDiv{
     background-color :  white;
-    width: 55%;
+    width: 80%;
     padding: 5px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 20px;
     border-radius: 20px;
 }
 
+.contDiv li{
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
 
 
 .tposts{
     font-weight: bold;
     text-align: center;
     color:rgb(47, 144, 144);
-    margin-bottom: 5px;
 }
 
 .pposts{
     text-align: left;
     color: rgb(27, 27, 27);
+    font-family: "Texturina", serif;
 }
 
 
 .divSpans{
 display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
+justify-content: start;
 gap: 20px;
 }
 
@@ -170,7 +194,29 @@ gap: 20px;
     border: 1px solid rgba(130, 250, 194, 0.393);
     background-color: rgba(130, 250, 194, 0.393);
     border-radius: 30px;
-    padding: 2px;
+    padding: 5px;
+    font-weight: bold;
+}
+
+.interaction{
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid black;
+    justify-content: start;
+    align-items: center;
+    gap: 40px;
+}
+
+.view{
+    color: aqua;
+}
+
+.like{
+    color: crimson;
+}
+
+.dislike{
+color: black;
 }
 
 .copy{
@@ -202,11 +248,12 @@ gap: 20px;
         max-width: 100svw;
         display: grid;
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 70px 1fr;
+        grid-template-columns: 1fr 3fr;
+        grid-template-rows: 100px 1fr 50px;
         grid-template-areas: 
         "h h"
-        "m m";
+        "a m"
+        "f f";
     }
     
     header{
@@ -215,23 +262,36 @@ gap: 20px;
     
     main{
         grid-area: m;  
-        background-color: rgba(0, 0, 0, 0.874);
     }
     
     
-        .aTags{
-            display: none;
+    aside{
+        grid-area: a;
+        
+            
+        }
+
+        .tags{
+            display: grid;
+            grid-template-columns: 100px;
         }
 
         .contDiv{
-            background-color :  rgba(181, 181, 181, 0.644);
-            width: 100%;
+            background-color :  rgba(255, 255, 255, 0.352);
+            width: 95%;
             padding: 5px;
             display: flex;
             flex-direction: column;
             align-items: center;
             border-radius: 20px;
             gap: 20px;
+
+
+            
+        }
+
+        .contDiv li{
+            padding: 20px;
         }
         
         .tposts{
@@ -251,6 +311,24 @@ gap: 20px;
                 color: white;
             }
         }
+
+
+        footer{
+        grid-area: f;
+        }
+
+        footer span{
+        
+            background-color: white;
+            border-radius: 5px 5px 0px 0px;
+        }
+
     }
     
    
+
+    footer span{
+        
+        background-color: white;
+        border-radius: 5px 5px 0px 0px;
+    }
