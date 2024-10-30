@@ -44,7 +44,7 @@ header {
 }
 
 .searchInput {
-  width: 50.3%;
+  width: 50.5%;
   border: 2px solid black;
   background-color: whitesmoke;
   border-radius: 15px;
@@ -79,7 +79,7 @@ header {
   content: "  H| ";
   background-color: whitesmoke;
   border: 2px solid black;
-  top: 10px;
+  top: 25px;
 }
 
 .oversearchInput::after {
@@ -333,7 +333,7 @@ main {
 
   .oversearchInput {
     position: absolute;
-    width: 49%;
+    width: 48.8%;
     height: 15px;
     border-radius: 15px;
     padding: 15px;
