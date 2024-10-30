@@ -22,6 +22,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+flex-wrap: wrap;
 background-color: rgba(128, 128, 128, 0.464);
 gap: 10px;
 padding: 10px;
@@ -37,6 +38,12 @@ padding: 10px;
     position: relative;
     z-index: 2;
     opacity: 0;
+}
+
+.aTags{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .searchInput:active{
@@ -127,12 +134,13 @@ main{
 
 .contDiv{
     background-color :  white;
-    width: 50%;
+    width: 55%;
     padding: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    border-radius: 20px;
 }
 
 
@@ -182,3 +190,67 @@ gap: 20px;
     box-shadow: 0px 8px 30px -5px #14ceb5;
 
 }
+
+/* =========================== */
+
+@media (max-width:800px){
+
+    body{
+        height: 100svh;
+        max-height: 100svh;
+    
+        max-width: 100svw;
+        display: grid;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 70px 1fr;
+        grid-template-areas: 
+        "h h"
+        "m m";
+    }
+    
+    header{
+        grid-area: h;
+    }
+    
+    main{
+        grid-area: m;  
+        background-color: rgba(0, 0, 0, 0.874);
+    }
+    
+    
+        .aTags{
+            display: none;
+        }
+
+        .contDiv{
+            background-color :  rgba(181, 181, 181, 0.644);
+            width: 100%;
+            padding: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 20px;
+            gap: 20px;
+        }
+        
+        .tposts{
+        
+            margin-bottom: 10px;
+        }
+        
+        .contDiv:hover{
+        
+            .tposts{
+        
+                color: red;
+            }
+        
+            .pposts{
+        
+                color: white;
+            }
+        }
+    }
+    
+   

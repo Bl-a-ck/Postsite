@@ -18,6 +18,7 @@ qR.onload = function () {
           <li>
           <h2 class="tposts">${ele.title}</h2>
             <p class="pposts">${ele.body}</p>
+            <button class="copy" onclick="copyText('${ele.body}')"><i class="fa-regular fa-copy"></i></button>
           </li>
       
           <div class="divSpans">
@@ -32,7 +33,11 @@ qR.onload = function () {
   }
 };
 
-
+function copyText(text) {
+        navigator.clipboard.writeText(text)
+          .then(() => alert("تم نسخ النص!"))
+          .catch(err => console.error("فشل في النسخ: ", err));
+      }
 
 
 
